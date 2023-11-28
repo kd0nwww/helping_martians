@@ -17,7 +17,11 @@ while found_boxes != True:
         continue
     else:
         print(f"Boxes are buried in {box_cords}")
-        box_cords_input = [int(i) for i in input().split()]
+        box_cords_input = []
+        for j in range(3):
+            cord = int(input(f"Box {j + 1}: "))
+            box_cords_input.append(cord)
+
         weights = generate_weights()
         weight_found = 0
 
@@ -28,5 +32,5 @@ while found_boxes != True:
         if weight_found == 713:
             found_boxes = True
 
-    
-print(f"Boxes are found at {box_cords_input}")
+for i in range(3):
+    print(f"Box {i + 1} is found at point '{box_cords_input[i]}' and has a weight of {weights[i]}")
